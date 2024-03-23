@@ -1,0 +1,65 @@
+<html>
+    <title>
+        Registration Form.
+    </title>
+    <body style="background-color:rgb(221, 223, 223)">
+        <center>
+            <img src="griet.jpg" height="150" width="150">
+            <div>
+        <marquee><h1 style="color:orangered">Enter your details..</h1></marquee>
+                <form action="/Assignment1/form2.html" onSubmit="return validate()" target="_blank">
+                    <table border="1px">
+                        <tr><td >First Name:</td><td><input name="fname" required autofocus></td></tr>
+                        <tr><td >Last Name:</td><td><input type="text" name="lname" required autofocus></td></tr>
+                        <tr><td >Email:</td><td><input type="email" required></td></tr>
+                        <tr><td>Password:</td><td><input type="password" name="pass" required></td></tr>
+                        <tr><td>User ID:</td><td><input type="text" name="userid" required></td></tr>
+                        <tr><td>Gender:</td><td>Male <input type="radio" name="Gender" required>Female <input type="radio" name="Gender"></td></tr>
+                        <tr><td>DOB:</td><td><input type="date"></td></tr>
+                    </table>
+            <input type="submit" value="Submit"><br><br>
+        </form>
+        <button onclick="window.print()">Print</button>
+</div>
+    </center>
+    <script>
+    function validate()
+    {   
+        var fn = form.fname.value;
+        for(x in fn)
+            {
+                ch=fn.charCodeAt(x);
+                if(ch<65||ch>90 && ch<97||ch>122)
+                    {
+                    alert("Invalid firstname");
+                    return false;
+                    }
+            }
+            var ln = form.lname.value;
+        for(y in ln)
+            {
+                ch=ln.charCodeAt(y);
+                if(ch<65||ch>90 && ch<97||ch>122)
+                    {
+                    alert("Invalid lastname");
+                    return false;
+                    }
+                }
+        var pwd1=form.pass.value;
+        var pwdl=pwd1.length;
+        if(pwdl%2===1)
+            {
+            alert("Password should contain even number of characters");
+            return false;
+            }
+        if(pwdl > 8)
+            {
+                alert("Password should not exceed 8 digits");
+                return false;
+            }
+            return true;
+    }
+    </script>
+    </body>
+</div>
+</html>
